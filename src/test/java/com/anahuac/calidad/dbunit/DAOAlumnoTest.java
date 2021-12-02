@@ -23,7 +23,7 @@ public class DAOAlumnoTest extends DBTestCase {
 
     public DAOAlumnoTest() {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS, "com.mysql.cj.jdbc.Driver");
-        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL,"jdbc:mysql://localhost:3306/pruebas_db");
+        System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL,"jdbc:mysql://127.0.0.1:3306/pruebas_db");
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "root");
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "");
     }
@@ -59,10 +59,10 @@ public class DAOAlumnoTest extends DBTestCase {
         try {
         	
             IDataSet databaseDataSet = getConnection().createDataSet();
-            ITable actualTable = databaseDataSet.getTable("alumnos_tbl");
+            ITable actualTable = databaseDataSet.getTable("alumnos_tb1");
 
             IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/insert_result.xml"));
-            ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+            ITable expectedTable = expectedDataSet.getTable("alumnos_tb1");
 
             Assertion.assertEquals(expectedTable, actualTable);
 
@@ -81,10 +81,10 @@ public class DAOAlumnoTest extends DBTestCase {
         try {
             IDataSet databaseDataSet = getConnection().createDataSet();
 
-            ITable actualTable = databaseDataSet.getTable("alumnos_tbl");
+            ITable actualTable = databaseDataSet.getTable("alumnos_tb1");
 
             IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/delete_result.xml"));
-            ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+            ITable expectedTable = expectedDataSet.getTable("alumnos_tb1");
 
             Assertion.assertEquals(expectedTable, actualTable);
 
@@ -103,10 +103,10 @@ public class DAOAlumnoTest extends DBTestCase {
         try {
             IDataSet databaseDataSet = getConnection().createDataSet();
 
-            ITable actualTable = databaseDataSet.getTable("alumnos_tbl");
+            ITable actualTable = databaseDataSet.getTable("alumnos_tb1");
 
             IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File("src/resources/update_result.xml"));
-            ITable expectedTable = expectedDataSet.getTable("alumnos_tbl");
+            ITable expectedTable = expectedDataSet.getTable("alumnos_tb1");
 
             Assertion.assertEquals(expectedTable, actualTable);
 
