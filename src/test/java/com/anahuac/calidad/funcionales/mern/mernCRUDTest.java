@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
-import org.junit.runners.MethodSorters;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
@@ -15,7 +14,6 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class mernCRUDTest {
   private WebDriver driver;
   private String baseUrl;
