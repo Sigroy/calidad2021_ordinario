@@ -31,7 +31,7 @@ public class mernCRUDTest {
   }
 
   @Test
-  public void testAdd() throws Exception {
+  public void testadd() throws Exception {
     driver.get("https://mern-crud.herokuapp.com/");
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
     driver.findElement(By.name("name")).click();
@@ -52,7 +52,7 @@ public class mernCRUDTest {
   }
   
   @Test
-  public void testRead() throws Exception {
+  public void testread() throws Exception {
 	  driver.get("https://mern-crud.herokuapp.com/");
 	  List<WebElement> elementsList = driver.findElements(By.xpath("//td"));
 	  for (WebElement element: elementsList) {
@@ -61,7 +61,7 @@ public class mernCRUDTest {
   }
   
   @Test
-  public void testUpdate() throws Exception {
+  public void tesTupdate() throws Exception {
 	  driver.get("https://mern-crud.herokuapp.com/");
 	  driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button")).click();
 	  driver.findElement(By.name("name")).click();
@@ -76,7 +76,7 @@ public class mernCRUDTest {
   }
   
   @Test
-  public void testdelete() throws Exception {
+  public void testDelete() throws Exception {
 	    driver.get("https://mern-crud.herokuapp.com/");
 	    Boolean isPresentitem = driver.findElements(By.xpath("//button[@class='ui black button']")).size()>0;
 	    if(!isPresentitem) {
