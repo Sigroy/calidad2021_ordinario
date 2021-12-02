@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class mernCRUDTest {
   private WebDriver driver;
@@ -22,8 +23,9 @@ public class mernCRUDTest {
   @Before
   public void setUp() throws Exception {
     WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
-    baseUrl = "https://mern-crud.herokuapp.com/";
+    ChromeOptions options = new ChromeOptions();
+	options.addArguments("--headless");
+    driver = new ChromeDriver(options);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
   }
