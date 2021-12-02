@@ -15,7 +15,7 @@ public class AlumnoDAOMysql implements AlumnoDAO {
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:33060/pruebas_db", "root", "secret");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pruebas_db","root","");
         } catch (Exception e) {
             System.out.println(e);
         }
