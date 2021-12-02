@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS `pruebas_db` DEFAULT CHARACTER SET utf8 COLLATE ut
 USE `pruebas_db`;
 
 CREATE TABLE IF NOT EXISTS `alumnos_tb1` (
-  `id` int(2),
+  `id` int(10),
   `nombre` varchar(250),
   `email` varchar(250),
   `edad` int(3)
