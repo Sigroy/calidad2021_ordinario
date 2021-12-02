@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -23,9 +22,8 @@ public class mernCRUDTest {
   @Before
   public void setUp() throws Exception {
     WebDriverManager.chromedriver().setup();
-    ChromeOptions options = new ChromeOptions();
-	options.addArguments("--headless");
-    driver = new ChromeDriver(options);
+    driver = new ChromeDriver();
+    baseUrl = "https://mern-crud.herokuapp.com/";
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     js = (JavascriptExecutor) driver;
   }
@@ -57,6 +55,7 @@ public class mernCRUDTest {
 	  List<WebElement> elementsList = driver.findElements(By.xpath("//td"));
 	  for (WebElement element: elementsList) {
 		  System.out.println(element.getText());
+		  assertThat("Sigfredo", is(name));
 	  }  
   }
   
