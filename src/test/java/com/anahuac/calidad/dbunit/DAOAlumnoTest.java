@@ -95,7 +95,7 @@ public class DAOAlumnoTest extends DBTestCase {
 
     @Test
     public void testUpdateEmail() {
-		Alumno alumno = new Alumno("hola3", "003", 20, "actualizar@gmail.com");;
+		Alumno alumno = new Alumno("hola3", "003", 20, "hola@hola");;
 		AlumnoDAOMysql daoMySQL = new AlumnoDAOMysql();
 		
 		daoMySQL.updateEmail(alumno);
