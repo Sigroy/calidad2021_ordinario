@@ -9,10 +9,10 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class mernCRUDTest {
   private WebDriver driver;
@@ -57,7 +57,6 @@ public class mernCRUDTest {
 	  List<WebElement> elementsList = driver.findElements(By.xpath("//td"));
 	  for (WebElement element: elementsList) {
 		  System.out.println(element.getText());
-		  assertThat("Sigfredo", is(name));
 	  }  
   }
   
