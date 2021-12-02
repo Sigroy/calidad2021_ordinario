@@ -1,1 +1,9 @@
+dist: trusty
+sudo: enabled
 language: java
+jdk:
+- openjdk8
+services:
+  - mysql
+before_install:
+- mysql -u root --password="" < db.sql
