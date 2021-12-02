@@ -1,9 +1,9 @@
-dist: trusty
-sudo: enabled
 language: java
-jdk:
-- openjdk8
+sudo: enabled
 services:
   - mysql
+  
 before_install:
-- mysql -u root --password="" < db.sql
+    sudo mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+    udo mysql -e 'CREATE DATABASE IF NOT EXISTS pruebas_db;'
+    sudo mysql -e 'USE pruebas_db;
